@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const test = require("./router/router.js");
 const connection = require("./connect.js");
 
@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//connection.connect();
+connection.connect();
 
 app.post('/kontakt', (req, res) => {
     console.log(req.body);
